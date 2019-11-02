@@ -13,7 +13,9 @@ class PointOfSale
 		count = {}
 		total = 0 
 		items.chars.each{|i| 
-			if count.include?(i)
+			if !@pricing.include?(i)
+				puts "Item #{i} not found."		
+			elsif count.include?(i)
 				count[i] = count[i]+1
 			else
 				count[i] = 1
